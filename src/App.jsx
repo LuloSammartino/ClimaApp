@@ -30,8 +30,6 @@ function App() {
     <>
       <h1>ClimApp</h1>
       <Card 
-          min="23" 
-          max="30" 
           
           ciudades={ciudades}
           >
