@@ -1,11 +1,12 @@
 import Card from './components/Card'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-
+import SearchBar from './components/SearchBar'
 
 function App() {
 
-  const [ciudades, setCiudades] = useState() 
+  const [ciudades, setCiudades] = useState();
+  const [cards, setCards] = useState([]);
   
   const GetAllCities = async () => {
     let array = []
@@ -25,15 +26,21 @@ function App() {
   
   useEffect(() => {GetAllCities()}, [])
 
+  const handleChangeCards = (card) =>{
+    setCards([...cards, card])
+  }
 
   return (
     <>
       <h1>ClimApp</h1>
-      <Card 
-          
-          ciudades={ciudades}
-          >
-    </Card>
+      <SearchBar ciudades={ciudades} cards={cards} handleChangeCards={handleChangeCards}></SearchBar>
+      <div>{cards.map( card => 
+        <Card ciudad ={card.ciudad}
+              celcius={card.celcius}
+              clima={card.clima}>
+        </Card>
+      )}</div>
+      
     
     </>
   )
