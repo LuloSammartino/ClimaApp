@@ -1,18 +1,17 @@
 import { useState, useEffect} from "react"
-import './card.css'
-import Rainy from "../assets/rain.jpg";
-import PartlyCloudy from "../assets/cloudy_sun.jpg"
-import Cloudy from "../assets/cloudy.jpg"
-import Sunny from "../assets/sunny.jpg"
-import Haze from "../assets/haze.png"
-import Snow from "../assets/snow.jpg"
-
+import styles from './Card.module.css' 
+import Rainy from "../../assets/rain.jpg";
+import PartlyCloudy from "../../assets/cloudy_sun.jpg"
+import Cloudy from "../../assets/cloudy.jpg"
+import Sunny from "../../assets/sunny.jpg"
+import Haze from "../../assets/haze.png"
+import Snow from "../../assets/snow.jpg"
 
 function Card({  ciudad, celcius, clima })  {
 
   const [image, setImage] = useState()
   
-    
+  
   useEffect(() => {switch (clima){
         case "Partly cloudy" : setImage(PartlyCloudy)
         
@@ -40,11 +39,16 @@ function Card({  ciudad, celcius, clima })  {
     
   
   return(
-    <div>
-        <h3>📍{ciudad}</h3>
+    <div className={styles.card}>
+      <button className={styles.cross} />
+        <h5>📍{ciudad}</h5>
+
+        <div className={styles.insideCard}>
         <img src={image} width={"100px"} alt="imagen"/>
         <h3>{celcius}°</h3>
         <h4>{clima}</h4>
+        </div>
+
         
         
     </div>

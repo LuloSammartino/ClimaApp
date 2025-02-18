@@ -1,7 +1,8 @@
-import Card from './components/Card'
+import Cards from './components/Cards/Cards'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-import SearchBar from './components/SearchBar'
+import SearchBar from './components/SearchBar/SearchBar'
+import styles from "./App.module.css"
 
 function App() {
 
@@ -30,19 +31,18 @@ function App() {
     setCards([...cards, card])
   }
 
-  return (
-    <>
-      <h1>ClimApp</h1>
+  return ( <div className={styles.page}> 
+  <header className={styles.header}>
+    <h1>ClimApp</h1>
       <SearchBar ciudades={ciudades} cards={cards} handleChangeCards={handleChangeCards}></SearchBar>
-      <div>{cards.map( card => 
-        <Card ciudad ={card.ciudad}
-              celcius={card.celcius}
-              clima={card.clima}>
-        </Card>
-      )}</div>
+    </header>  
+    <main className={styles.main}>
+      <Cards cards={cards}></Cards>
       
     
-    </>
+    </main>
+  
+  </div>
   )
 }
 

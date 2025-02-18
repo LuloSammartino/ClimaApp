@@ -1,0 +1,12 @@
+.card{
+    border: solid black;
+    width: 150px;
+    height: 600px;
+}
+
+.insideCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
