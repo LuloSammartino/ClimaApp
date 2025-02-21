@@ -9,7 +9,7 @@ function App() {
   const [ciudades, setCiudades] = useState();
   const [cards, setCards] = useState([]);
   
-  const GetAllCities = async () => {
+    const GetAllCities = async () => {
     let array = []
     await axios.get("https://restcountries.com/v3.1/all/")
     .then(res => res.data.forEach((e) =>  {array.push({name: `${e.capital}, ${ e.name.common }`, latlong: e.latlng })}))//guardo solo el nombre, la capital y latitud y longitud
@@ -27,8 +27,13 @@ function App() {
   
   useEffect(() => {GetAllCities()}, [])
 
-  const handleChangeCards = (card) =>{
+    const handleChangeCards = (card) =>{
     setCards([...cards, card])
+  }
+
+    const deleteCard = (ciudadParametro) =>{
+    
+    setCards(cards.filter((card) => card.ciudad != ciudadParametro) ) 
   }
 
   return ( <div className={styles.page}> 
@@ -37,7 +42,7 @@ function App() {
       <SearchBar ciudades={ciudades} cards={cards} handleChangeCards={handleChangeCards}></SearchBar>
     </header>  
     <main className={styles.main}>
-      <Cards cards={cards}></Cards>
+      <Cards cards={cards} deleteCard={deleteCard}></Cards>
       
     
     </main>

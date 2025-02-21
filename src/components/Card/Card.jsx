@@ -7,7 +7,7 @@ import Sunny from "../../assets/sunny.jpg"
 import Haze from "../../assets/haze.png"
 import Snow from "../../assets/snow.jpg"
 
-function Card({  ciudad, celcius, clima })  {
+function Card({  ciudad, celcius, clima , deleteCard})  {
 
   const [image, setImage] = useState()
   
@@ -20,7 +20,8 @@ function Card({  ciudad, celcius, clima })  {
         case "Mostly cloudy" : setImage(Cloudy);
 
         break;
-        case "Rain Shower": setImage(Rainy);
+        case "Rain Shower": 
+        case "Light Rain" :setImage(Rainy);
 
         break;
         case "Sunny skies":
@@ -40,7 +41,7 @@ function Card({  ciudad, celcius, clima })  {
   
   return(
     <div className={styles.card}>
-      <button className={styles.cross} />
+      <button className={styles.cross} onClick={() => deleteCard(ciudad)}>X</button>
         <h5>📍{ciudad}</h5>
 
         <div className={styles.insideCard}>

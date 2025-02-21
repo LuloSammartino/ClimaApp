@@ -1,7 +1,9 @@
 .card{
     border: solid black;
     width: 150px;
-    height: 600px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 15px;
 }
 
 .insideCard{
@@ -9,4 +11,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.cross{
+    border-radius: 100%;
+    align-self: end;
 }
