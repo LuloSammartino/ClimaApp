@@ -1,4 +1,6 @@
-
+.page{
+    background: linear-gradient(to bottom, #a1c6d4, #4f7bab);
+}
 
 .header{
     height: 80%;

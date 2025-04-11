@@ -6,7 +6,7 @@ import styles from "./App.module.css"
 
 function App() {
 
-  const [ciudades, setCiudades] = useState();
+  const [ciudades, setCiudades] = useState([]);
   const [cards, setCards] = useState([]);
   
     const GetAllCities = async () => {
