@@ -1,9 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .page{
     background: linear-gradient(to bottom, #a1c6d4, #4f7bab);
+    min-height: 100dvh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 .header{
-    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,5 +20,14 @@
 }
 
 .main{
-    height: 600px;
+    min-height: 100%;
+    
+    
+}
+
+
+.footer{
+    
+    border: solid 2px #444;
+    
 }

@@ -46,7 +46,7 @@ function App() {
       
     
     </main>
-  
+    <footer className={styles.footer}>FOOTER</footer>
   </div>
   )
 }

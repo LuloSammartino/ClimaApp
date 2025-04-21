@@ -38,6 +38,7 @@ const [searchedCities, setCities] = useState(ciudades.slice(0,10));
     ).slice(0, 10)
 
     setCities(result)
+    
     !result.length ? setResults(false) : null ;
 }
 
