@@ -4,6 +4,9 @@
     height: 300px;
     margin: 10px;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 7px 7px;
 }
 
 .insideCard{
@@ -15,5 +18,21 @@
 
 .cross{
     border-radius: 100%;
+    width: 15%;
     align-self: end;
+    margin: 3px;
+    
+    border: none;
+    color: white;
+    background: none;
+    font-family: "Lunasima", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+
+}
+
+.cross:hover{
+    color: black;
+    
+    cursor: pointer;
 }
