@@ -8,6 +8,7 @@ function App() {
 
   const [ciudades, setCiudades] = useState([]);
   const [cards, setCards] = useState([]);
+  const [selected, setSelected] = useState("C");
   
     const GetAllCities = async () => {
     let array = []
@@ -38,14 +39,33 @@ function App() {
 
   return ( <div className={styles.page}> 
   <header className={styles.header}>
-    <h1>ClimApp</h1>
+    
+    <h1>ClimApp</h1> 
+    
       <SearchBar ciudades={ciudades} cards={cards} handleChangeCards={handleChangeCards}></SearchBar>
     </header>  
+    
+    
     <main className={styles.main}>
-      <Cards cards={cards} deleteCard={deleteCard}></Cards>
-      
+      <div className={styles.temperatureMode}>
+        <section className={`${styles.sectionF} ${selected === "F" ? styles.active : ''}`}
+          onClick={() => setSelected("F")}>F°
+
+        </section>
+        <section className={`${styles.sectionC} ${selected === "C" ? styles.active : ''}`}
+        onClick={() => setSelected("C")}>C°
+
+        </section>
+        <section className={`${styles.sectionK} ${selected === "K" ? styles.active : ''}`}
+        onClick={() => setSelected("K")}>K°
+
+        </section>
+      </div>
+      <Cards cards={cards} selected={selected} deleteCard={deleteCard}></Cards>
     
     </main>
+
+
     <footer className={styles.footer}>FOOTER</footer>
   </div>
   )

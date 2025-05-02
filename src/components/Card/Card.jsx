@@ -7,7 +7,7 @@ import Sunny from "../../assets/sunny.jpg"
 import Haze from "../../assets/haze.png"
 import Snow from "../../assets/snow.jpg"
 
-function Card({  ciudad, celcius, clima , deleteCard})  {
+function Card({  ciudad, celcius, clima , deleteCard, selected})  {
 
   const [image, setImage] = useState()
   
@@ -36,7 +36,13 @@ function Card({  ciudad, celcius, clima , deleteCard})  {
         break;
       }}, [])
       
-    
+      switch (selected){
+        case "K": celcius = celcius + 273;
+        break;
+        case "F": celcius = celcius + 9/5 * celcius + 32;
+        break;
+        default: celcius;
+        }
     
   
   return(

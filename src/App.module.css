@@ -21,11 +21,70 @@
     flex-direction: column;
 }
 
-
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 
 .footer{
     
     border: solid 2px #444;
     
+}
+
+.temperatureMode{
+    background-color: white;
+    border-radius: 50px;
+    width: 80px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    
+    border: #444 solid;
+}
+
+.temperatureMode:hover{
+    cursor: pointer;
+}
+
+.sectionC{
+    border-left: solid #444;
+    border-right: solid #444;
+    padding-inline: 5%;
+}
+
+
+.sectionF{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    padding-inline: 5%;
+    
+}
+
+
+.sectionK{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding-inline: 5%;
+    
+    
+}
+
+
+.sectionF:hover:not(.active),
+.sectionC:hover:not(.active),
+.sectionK:hover:not(.active){
+    background-color:khaki;
+    transition: 0.4s ;
+}
+
+
+.active{
+    background-color: #ffe765;
+    transition: 0.4s;
 }
