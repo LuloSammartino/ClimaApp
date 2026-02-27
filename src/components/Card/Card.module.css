@@ -6,15 +6,10 @@
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     box-shadow: 7px 7px;
 }
 
-.insideCard{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
 .cross{
     border-radius: 100%;
@@ -28,11 +23,25 @@
     font-family: "Lunasima", sans-serif;
     font-weight: 700;
     font-size: 15px;
-
+    
 }
 
 .cross:hover{
     color: black;
     
     cursor: pointer;
+}
+
+.cardCity{
+    height: 14%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.insideCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

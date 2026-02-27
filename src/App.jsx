@@ -12,7 +12,7 @@ function App() {
   
     const GetAllCities = async () => {
     let array = []
-    await axios.get("https://restcountries.com/v3.1/all/")
+    await axios.get("https://restcountries.com/v3.1/all?fields=name,capital,latlng")
     .then(res => res.data.forEach((e) =>  {array.push({name: `${e.capital}, ${ e.name.common }`, latlong: e.latlng })}))//guardo solo el nombre, la capital y latitud y longitud
     .then(res => array.sort((a, b) => {  //Orden alfabetico del array
       if(a.name < b.name){
@@ -48,17 +48,16 @@ function App() {
     
     <main className={styles.main}>
       <div className={styles.temperatureMode}>
-        <section className={`${styles.sectionF} ${selected === "F" ? styles.active : ''}`}
-          onClick={() => setSelected("F")}>F°
-
+        <section className={`${styles.sectionF} ${selected === "F" ? styles.active : ''}`}  onClick={() => setSelected("F")}>
+          F°
         </section>
-        <section className={`${styles.sectionC} ${selected === "C" ? styles.active : ''}`}
-        onClick={() => setSelected("C")}>C°
 
+        <section className={`${styles.sectionC} ${selected === "C" ? styles.active : ''}`} onClick={() => setSelected("C")}>
+          C°
         </section>
-        <section className={`${styles.sectionK} ${selected === "K" ? styles.active : ''}`}
-        onClick={() => setSelected("K")}>K°
 
+        <section className={`${styles.sectionK} ${selected === "K" ? styles.active : ''}`} onClick={() => setSelected("K")}>
+          K°
         </section>
       </div>
       <Cards cards={cards} selected={selected} deleteCard={deleteCard}></Cards>

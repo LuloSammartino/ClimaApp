@@ -48,7 +48,7 @@ function Card({  ciudad, celcius, clima , deleteCard, selected})  {
   return(
     <main className={styles.card}>
       <button className={styles.cross} onClick={() => deleteCard(ciudad)}>X</button>
-        <h5>📍{ciudad}</h5>
+        <h5 className={styles.cardCity}>📍{ciudad}</h5>
 
         <div className={styles.insideCard}>
           <img src={image} width={"100px"} alt="imagen"/>
