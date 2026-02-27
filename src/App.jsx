@@ -13,8 +13,12 @@ function App() {
     const GetAllCities = async () => {
     let array = []
     await axios.get("https://restcountries.com/v3.1/all?fields=name,capital,latlng")
-    .then(res => res.data.forEach((e) =>  {array.push({name: `${e.capital}, ${ e.name.common }`, latlong: e.latlng })}))//guardo solo el nombre, la capital y latitud y longitud
-    .then(res => array.sort((a, b) => {  //Orden alfabetico del array
+
+      .then(res => res.data.forEach((e) =>  { e.capital.length > 0 ?
+                                            array.push({name: `${e.capital}, ${ e.name.common }`, latlong: e.latlng }) :
+                                            array.push({name: `${e.name.common}`, latlong: e.latlng })}))
+        
+      .then(res => array.sort((a, b) => {  //Orden alfabetico del array
       if(a.name < b.name){
         return -1
       }                               

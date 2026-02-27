@@ -16,7 +16,7 @@ const [searchedCities, setCities] = useState(ciudades.slice(0,10));
     let found = ciudades.find(element=> element.name == e)
     let grados = found.latlong.join()
     
-    await axios.get(`http://api.weatherunlocked.com/api/current/${grados}?app_id=${import.meta.env.API_ID}&app_key=${import.meta.env.API_KEY}`)
+    await axios.get(`https://api.weatherunlocked.com/api/current/${grados}?app_id=${import.meta.env.API_ID}&app_key=${import.meta.env.API_KEY}`)
     .then(res => {
         handleChangeCards({
                 ciudad:found.name ,
