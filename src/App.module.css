@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,7 +6,7 @@
 
 }
 
-.page{
+.page {
     background: linear-gradient(to bottom, #a1c6d4, #4f7bab);
     min-height: 100dvh;
     width: 100%;
@@ -14,28 +14,31 @@
     grid-template-rows: auto 1fr auto;
 }
 
-.header{
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 15px;
+    font-size: 24px;
 }
 
-.main{
+.main {
+    margin-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
 }
 
 
-.footer{
-    
+.footer {
+
     border: solid 2px #444;
-    
+
 }
 
-.temperatureMode{
+.temperatureMode {
     background-color: white;
     border-radius: 50px;
     width: 80px;
@@ -44,46 +47,46 @@
     justify-content: center;
     align-items: center;
     margin-top: 1%;
-    
+
     border: #444 solid;
 }
 
-.temperatureMode:hover{
+.temperatureMode:hover {
     cursor: pointer;
 }
 
-.sectionC{
+.sectionC {
     border-left: solid #444;
     border-right: solid #444;
     padding-inline: 5%;
 }
 
 
-.sectionF{
+.sectionF {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     padding-inline: 5%;
-    
+
 }
 
 
-.sectionK{
+.sectionK {
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     padding-inline: 5%;
-    
+
 }
 
 
 .sectionF:hover:not(.active),
 .sectionC:hover:not(.active),
-.sectionK:hover:not(.active){
-    background-color:khaki;
-    transition: 0.4s ;
+.sectionK:hover:not(.active) {
+    background-color: khaki;
+    transition: 0.4s;
 }
 
 
-.active{
+.active {
     background-color: #ffe765;
     transition: 0.4s;
 }
